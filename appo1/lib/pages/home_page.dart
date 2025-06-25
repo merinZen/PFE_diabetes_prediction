@@ -279,7 +279,7 @@ class _HomePageState extends State<HomePage> {
                               "Sensor values are retrieved in real-time and stored locally. AI-based risk prediction is integrated.\n\n",
                         ),
                         TextSpan(
-                          text: "GitHub source code:\nhttps://github.com/merinZen/PFE_diabetes_prediction",
+                          text: "GitHub source  code:\nhttps://github.com/merinZen/PFE_diabetes_prediction",
                           style: const TextStyle(
                             color: Colors.blue,
                             decoration: TextDecoration.underline,
