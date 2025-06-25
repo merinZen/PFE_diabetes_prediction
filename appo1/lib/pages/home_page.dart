@@ -259,7 +259,7 @@ class _HomePageState extends State<HomePage> {
                   content: const Text(
                     "This app helps track user health data including heart rate and BMI to assess potential diabetes risk. "
                     "Sensor values are retrieved in real-time and stored locally. AI-based risk prediction is integrated.\n\n"
-                    "GitHub source code:\nhttps://github.com/yourusername/yourrepo",
+                    "GitHub source code:\nhttps://github.com/merinZen/PFE_diabetes_prediction",
                   ),
                   actions: [
                     TextButton(

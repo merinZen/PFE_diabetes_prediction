@@ -7,7 +7,7 @@ app = Flask(__name__)
 CORS(app)  # Allow cross-origin requests 
 #(important for Flutter to talk to Flask)
 # Load the trained Random Forest model
-model = joblib.load("diabetes_model.pkl")
+model = joblib.load("diabetes_model.joblib")
 
 
 @app.route("/predict", methods=["POST"])
