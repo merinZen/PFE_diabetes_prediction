@@ -6,7 +6,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:appo1/util/dialogue.dart';
 import 'package:appo1/util/tile.dart';
 import 'package:appo1/data/databasebox.dart';
-import 'package:appo1/api/predict_service.dart'; // << Added
+import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'package:appo1/api/predict_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -256,11 +259,45 @@ class _HomePageState extends State<HomePage> {
                 builder: (_) => AlertDialog(
                   backgroundColor: const Color.fromARGB(164, 234, 236, 237),
                   title: const Text("About This App"),
-                  content: const Text(
-                    "This app helps track user health data including heart rate and BMI to assess potential diabetes risk. "
-                    "Sensor values are retrieved in real-time and stored locally. AI-based risk prediction is integrated.\n\n"
-                    "GitHub source code:\nhttps://github.com/merinZen/PFE_diabetes_prediction",
+                  
+                  
+
+
+
+
+
+
+
+
+                  content: RichText(
+                    text: TextSpan(
+                      style: const TextStyle(color: Colors.black, fontSize: 16),
+                      children: [
+                        const TextSpan(
+                          text:
+                              "This app helps track user health data including heart rate and BMI to assess potential diabetes risk. "
+                              "Sensor values are retrieved in real-time and stored locally. AI-based risk prediction is integrated.\n\n",
+                        ),
+                        TextSpan(
+                          text: "GitHub source code:\nhttps://github.com/merinZen/PFE_diabetes_prediction",
+                          style: const TextStyle(
+                            color: Colors.blue,
+                            decoration: TextDecoration.underline,
+                          ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () async {
+                              final url = Uri.parse("https://github.com/merinZen/PFE_diabetes_prediction");
+                              if (await canLaunchUrl(url)) {
+                                await launchUrl(url, mode: LaunchMode.externalApplication);
+                              }
+                            },
+                        ),
+                      ],
+                    ),
                   ),
+
+
+
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
